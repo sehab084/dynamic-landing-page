@@ -24,7 +24,6 @@ function showTime() {
 
   setTimeout(showTime, 1000);
 }
-
 // Add Zeros
 function addZero(n) {
   return (parseInt(n, 10) < 10 ? "0" : "") + n;
@@ -35,19 +34,32 @@ showTime();
 function imageBackground() {
   let today = new Date(),
     sec = today.getSeconds();
+  console.log(sec);
 
   if (sec < 10) {
     document.body.style.backgroundImage = "url('image1.jpg')";
+    document.body.style.color = "black";
+    console.log("image1");
   } else if (sec < 20) {
+    console.log("image2");
     document.body.style.backgroundImage = "url('image2.jpg')";
   } else if (sec < 30) {
+    console.log("image3");
     document.body.style.backgroundImage = "url('image3.jpg')";
+    document.body.style.color = "white";
   } else if (sec < 40) {
+    console.log("image4");
+    document.body.style.color = "black";
     document.body.style.backgroundImage = "url('image4.jpg')";
   } else if (sec < 50) {
+    console.log("image5");
     document.body.style.backgroundImage = "url('image5.jpg')";
+    document.body.style.color = "white";
   } else {
+    console.log("image6");
     document.body.style.backgroundImage = "url('image6.jpg')";
+    document.body.style.color = "white";
   }
+  setTimeout(imageBackground, 1000);
 }
 imageBackground();
